@@ -1,0 +1,642 @@
+{
+  "version": 1,
+  "_help": "Edit the words between the quote marks, add 1 to the version number above, save, and upload this file over the old one. The screen checks the version number every 5 minutes and brings the changes in at the next page change. See README.txt for a guide to every section.",
+  "settings": {
+    "defaultSeconds": 10,
+    "checkForUpdatesMinutes": 5
+  },
+  "openingHours": {
+    "_help": "Each season lists the months it covers (1 = January, 12 = December). specialDays overrides single dates, for example: { \"date\": \"2026-12-25\", \"open\": \"Closed today\", \"lastEntry\": \"–\" }. Dates are written YYYY-MM-DD.",
+    "seasons": [
+      {
+        "name": "Summer",
+        "months": [4, 5, 6, 7, 8, 9, 10],
+        "open": "10:00am – 5:30pm",
+        "lastEntry": "4:30pm"
+      },
+      {
+        "name": "Winter",
+        "months": [11, 12, 1, 2, 3],
+        "open": "10:00am – 4:15pm",
+        "lastEntry": "3:15pm"
+      }
+    ],
+    "specialDays": []
+  },
+  "footer": {
+    "supportHeading": "Support the Mary Rose",
+    "supportAsk": "Will you *join them?*",
+    "supportText": "Scan to donate, join or leave a gift in your will.",
+    "supportUrlShown": "maryrose.org/support",
+    "qrLink": "https://maryrose.org/support/",
+    "openTodayHeading": "Open today",
+    "lastEntryHeading": "Last entry",
+    "timeNowHeading": "Time now",
+    "notes": ["No flash photography, please"],
+    "creditBy": "Created by",
+    "creditName": "Interpro Technology"
+  },
+  "logos": {
+    "maryRose": "images/mary-rose-logo.png",
+    "interpro": "images/interpro-logo.png",
+    "lottery": "images/lottery-heritage-fund.png"
+  },
+  "images": {
+    "dive": "images/dive.jpg",
+    "band-maroon": "images/band-maroon.jpg",
+    "band-navy": "images/band-navy.jpg",
+    "band-purple": "images/band-purple.jpg",
+    "band-teal": "images/band-teal.jpg",
+    "cowdray": "images/cowdray.jpg",
+    "hall": "images/hall.jpg",
+    "hatch": "images/hatch.jpg",
+    "hull": "images/hull.jpg",
+    "left": "images/left.jpg",
+    "life": "images/life.jpg",
+    "objects": "images/objects.jpg",
+    "right": "images/right.jpg",
+    "tours": "images/tours.jpg",
+    "wreck": "images/wreck.jpg"
+  },
+  "screens": [
+    {
+      "type": "feature",
+      "image": "hall",
+      "text": "band",
+      "band": 640,
+      "seconds": 10,
+      "label": "Portsmouth Historic Dockyard",
+      "eyebrow": "Welcome",
+      "title": "Welcome to the *Mary Rose*",
+      "titleSize": 150,
+      "lede": "Home to the flagship of Henry VIII and the largest collection of Tudor artefacts in the world.",
+      "dates": [
+        { "year": "1511", "head": "Launched", "text": "Built in Portsmouth" },
+        { "year": "1545", "head": "Lost", "text": "Sank in the Solent" },
+        { "year": "1982", "head": "Raised", "text": "Lifted from the seabed" }
+      ]
+    },
+    {
+      "type": "list",
+      "theme": "navy",
+      "seconds": 12,
+      "compact": true,
+      "label": "Our supporters",
+      "page": "1 / 3",
+      "eyebrow": "Thank you",
+      "title": "This Museum has been *made possible* by",
+      "lottery": true,
+      "tiers": [
+        {
+          "size": 100,
+          "names": ["Heritage Lottery Fund"]
+        },
+        {
+          "size": 78,
+          "names": ["Garfield Weston Foundation"]
+        },
+        {
+          "size": 58,
+          "names": ["Hampshire County Council", "Stavros Niarchos Foundation", "Wellcome Trust"]
+        },
+        {
+          "size": 48,
+          "names": ["B&Q PLC", "The Foyle Foundation", "LV=", "Sir Siegmund Warburg’s Voluntary Settlement"]
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "image": "left",
+      "text": "bottom",
+      "seconds": 11,
+      "label": "What’s on",
+      "tag": "Included in your ticket",
+      "title": "Dive the *Mary Rose* 4D",
+      "titleSize": 96,
+      "lede": "The untold story of the finding, excavation and recovery of the Mary Rose, in our multi-sensory 4D cinema.",
+      "note": "Narrated by Ross Kemp."
+    },
+    {
+      "type": "list",
+      "theme": "navy",
+      "seconds": 12,
+      "compact": true,
+      "label": "Our supporters",
+      "page": "2 / 3",
+      "eyebrow": "Thank you",
+      "title": "This Museum has been *made possible* by",
+      "tiers": [
+        {
+          "size": 50,
+          "names": [
+            "John Ellerman Foundation",
+            "The Fidelity UK Foundation",
+            "Sir John Fisher Foundation",
+            "J Paul Getty Jr Charitable Trust",
+            "The Leathersellers’ Company Charitable Fund",
+            "Portsmouth Naval Base Property Trust",
+            "The Bernard Sunley Charitable Foundation",
+            "The Wolfson Foundation"
+          ]
+        },
+        {
+          "size": 46,
+          "names": [
+            "Coles-Medlock Foundation",
+            "The Hartnett Conservation Trust",
+            "The Headley Trust",
+            "The Scorpion Charitable Trust",
+            "Southern Water"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "image": "hull",
+      "text": "band",
+      "band": 900,
+      "seconds": 11,
+      "label": "Museum highlights",
+      "tag": "The ship",
+      "title": "See her from *every deck*",
+      "lede": "Views of the Mary Rose run right through the Museum. From the Upper Deck gallery you can take in the whole ship, and smell her timbers."
+    },
+    {
+      "type": "list",
+      "theme": "navy",
+      "seconds": 12,
+      "compact": true,
+      "label": "Our supporters",
+      "page": "3 / 3",
+      "eyebrow": "Thank you",
+      "title": "This Museum has been *made possible* by",
+      "tiers": [
+        {
+          "size": 46,
+          "names": [
+            "The Band Trust",
+            "Barclays",
+            "Eranda Rothschild",
+            "The Allan and Nesta Ferguson Charitable Trust",
+            "The Charles Hayward Foundation",
+            "The Hobson Charity",
+            "Portsmouth Football Club"
+          ]
+        },
+        {
+          "size": 42,
+          "names": [
+            "The John Coates Charitable Trust",
+            "The Goldsmiths’ Company Charity",
+            "The Peter Harrison Heritage Foundation",
+            "Hobart Charitable Trust",
+            "The Dr Mortimer and Theresa Sackler Foundation",
+            "Screwfix Ltd",
+            "John Swire 1989 Charitable Trust",
+            "The Welton Foundation"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "image": "hatch",
+      "wash": true,
+      "text": "top",
+      "seconds": 11,
+      "label": "For families",
+      "tag": "Free family trail",
+      "title": "Follow *Hatch,* the ship’s dog",
+      "lede": "Hatch was the ratter on board the Mary Rose. Pick up a free trail sheet at the start of your visit and let him lead you through the Museum.",
+      "note": "Collect a paw print stamp when you finish."
+    },
+    {
+      "type": "list",
+      "theme": "purple",
+      "seconds": 13,
+      "label": "Flag Officers",
+      "page": "1 / 5",
+      "eyebrow": "Our major donors",
+      "title": "Flag Officers of the *Mary Rose*",
+      "lede": "The Mary Rose Trust recognises its major donors in four ranks, after the Flag Officers of the Royal Navy.",
+      "founder": {
+        "head": "Founder Member",
+        "name": "His Royal Highness, The Prince of Wales"
+      },
+      "ranks": [
+        {
+          "rank": "Admiral",
+          "size": 43,
+          "pad": 20,
+          "names": [
+            "Mr Michael Aiken",
+            "Sir David Cooksey GBE",
+            "Mr Michael Donovan",
+            "Mr Alexandre Gaydamak",
+            "Lord Iliffe DL",
+            "Mr Mark Loveday",
+            "Mr Alan Lovell DL",
+            "Mr Rich Ricci",
+            "Mr Clive Richards OBE DL",
+            "Mr John Robinson",
+            "Dr Chris Sansom",
+            "Lady Stevenson DL",
+            "Mr Daniel K Thorne"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "image": "wreck",
+      "text": "band",
+      "band": 700,
+      "seconds": 12,
+      "label": "Museum highlights",
+      "tag": "The 1545 Experience",
+      "big": "1545",
+      "title": "Her *last moments*",
+      "lede": "On 19 July 1545, 200 French ships tried to invade England and the Mary Rose went into action for the last time. Relive the Battle of the Solent, narrated by Dame Judi Dench."
+    },
+    {
+      "type": "list",
+      "theme": "purple",
+      "seconds": 13,
+      "label": "Flag Officers",
+      "page": "2 / 5",
+      "eyebrow": "Our major donors",
+      "title": "Flag Officers of the *Mary Rose*",
+      "ranks": [
+        {
+          "rank": "Vice Admiral",
+          "size": 38,
+          "pad": 19,
+          "names": [
+            "Mr Thomas Bachmann",
+            "Mr Len Blavatnik",
+            "Mr Edmund Byers",
+            "Mr Michael Campbell MBE DL",
+            "The Hon Charles Harris",
+            "Mr Peter Mallinson",
+            "Mr Nigel McNair Scott",
+            "Mr Richard Morse",
+            "Mr Michael Slade"
+          ]
+        },
+        {
+          "rank": "Rear Admiral",
+          "size": 38,
+          "pad": 19,
+          "names": [
+            "Mr Richard Atterbury",
+            "Mr Julian Cazalet",
+            "Mr Simon De Zoete",
+            "Mr Roger Eaton",
+            "Lord Fink",
+            "Mr Jonathan Gestetner",
+            "Mr Derek Hathaway OBE",
+            "Mr Geoff Hunt",
+            "Mr James Lupton CBE",
+            "Mr Peter Wilson"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "image": "objects",
+      "wash": true,
+      "text": "bottom",
+      "seconds": 11,
+      "label": "Museum highlights",
+      "tag": "The collection",
+      "title": "Real *Tudor* objects",
+      "lede": "From nit combs to backgammon sets, shoes and engraved bowls: the largest collection of Tudor artefacts in the world."
+    },
+    {
+      "type": "list",
+      "theme": "purple",
+      "seconds": 13,
+      "label": "Flag Officers",
+      "page": "3 / 5",
+      "eyebrow": "Our major donors",
+      "title": "Flag Officers of the *Mary Rose*",
+      "ranks": [
+        {
+          "rank": "Commodore",
+          "size": 38,
+          "pad": 14,
+          "range": "A – F",
+          "names": [
+            "Mr Lionel Allery",
+            "Mr Peter Andreae DL",
+            "Mr Michael Ashley",
+            "Mrs Samantha Axtell",
+            "Mrs Jamie Balfour",
+            "Mr Michael Blinco",
+            "Mr Thomas Bolt",
+            "Cdr Tim Boycott OBE RN",
+            "Lord Brabourne",
+            "Mr Christopher Brandon",
+            "Mr John Brookes OBE",
+            "Mr Jonathan Brown",
+            "Mr Keith Brown",
+            "Mr Andrew Brownsword",
+            "Mrs Jennifer Brzozowska",
+            "Mrs Dina Bunn",
+            "Mr John Butler",
+            "Mr Ian Cheshire",
+            "Lady Clarendon DL",
+            "Cdre Jonathan Cooke OBE RN",
+            "Sir David Davies DL",
+            "Mr Michael Deeny",
+            "Mr Peter Dobbs",
+            "Dame Amelia Fawcett DBE",
+            "Mr Colin Field"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "image": "life",
+      "wash": true,
+      "text": "top",
+      "seconds": 11,
+      "label": "Museum highlights",
+      "tag": "Life on board",
+      "title": "Meet the *crew*",
+      "lede": "The Barber Surgeon, the Carpenter, the Cook and the Archer Royal. Get to know the men of the Mary Rose through the things they left behind."
+    },
+    {
+      "type": "list",
+      "theme": "purple",
+      "seconds": 13,
+      "label": "Flag Officers",
+      "page": "4 / 5",
+      "eyebrow": "Our major donors",
+      "title": "Flag Officers of the *Mary Rose*",
+      "ranks": [
+        {
+          "rank": "Commodore",
+          "size": 38,
+          "pad": 14,
+          "range": "G – P",
+          "names": [
+            "Ms Jennifer Green",
+            "Mr Matthew Grinnell",
+            "Mr Adam Humphryes",
+            "Mr Andrew Joy",
+            "Mr Terry Kerr",
+            "Mr David Kowitz",
+            "Mr Ian Laing CBE DL",
+            "Mrs Michael Langdon",
+            "Mr Robert Legget",
+            "R. Adm John Lippiett CB MBE",
+            "Miss Emma Lovell",
+            "Miss Lucinda Lovell",
+            "Viscount Lymington",
+            "Mr Neil McGrigor",
+            "Mr Michael Meacock",
+            "Dr Dudley Moore",
+            "Mr Colin Murray",
+            "Mr Finian O’Sullivan",
+            "Mr Tim Oliver",
+            "Mr David Palmer CBE",
+            "Mr Robert Pooley",
+            "The Countess of Portsmouth",
+            "The Earl of Portsmouth DL",
+            "Dr David Price CBE",
+            "Miss Caroline Purse"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "image": "cowdray",
+      "text": "band",
+      "band": 800,
+      "seconds": 11,
+      "label": "Museum highlights",
+      "tag": "Interactive display",
+      "title": "Step into the *Cowdray Engraving*",
+      "titleSize": 100,
+      "lede": "Explore the events of 19 July 1545, and Portsmouth as the Tudors knew it, in an interactive virtual display."
+    },
+    {
+      "type": "list",
+      "theme": "purple",
+      "seconds": 13,
+      "label": "Flag Officers",
+      "page": "5 / 5",
+      "eyebrow": "Our major donors",
+      "title": "Flag Officers of the *Mary Rose*",
+      "ranks": [
+        {
+          "rank": "Commodore",
+          "size": 38,
+          "pad": 14,
+          "range": "P – W",
+          "names": [
+            "Mr Nigel Purse",
+            "Mrs Stella Reeves",
+            "Mr Russell S Reynolds, Jr",
+            "Lady Rivett-Carnac",
+            "Mr Keith Roberts",
+            "Mrs Judy Robinson",
+            "Mr Alex Roe",
+            "Mr James Roe",
+            "Mr Ian Ronald",
+            "Mr Christopher Shaw",
+            "Mr Andrew Speirs",
+            "Mr Nicholas Stanley",
+            "Mr Alan Stannah",
+            "Dr Derek Stubbs",
+            "Mr Tom Sweet-Escott",
+            "Mr Hugh Tidbury",
+            "Lady Tidbury",
+            "The Hon Robert Tuttle",
+            "Mrs Sally Tyrrell",
+            "Mrs Cynthia J Warner",
+            "Mr Charles Watson",
+            "Mrs Anne Wright",
+            "Mr Crispin Wright"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "image": "tours",
+      "wash": true,
+      "text": "top",
+      "seconds": 12,
+      "label": "What’s on",
+      "tag": "Guided tours",
+      "title": "Explore with an *expert guide*",
+      "facts": [
+        { "k": "Highlights Tour", "d": "1 hour · £15 per person" },
+        { "k": "Premium Tour", "d": "2 hours · £25 per person" },
+        { "k": "Family Tour", "d": "1 hour · £30" }
+      ],
+      "note": "The Premium Tour includes a look at artefacts in our reserve collection. Book online at maryrose.org."
+    },
+    {
+      "type": "list",
+      "theme": "maroon",
+      "seconds": 14,
+      "label": "Revealing the Ship",
+      "eyebrow": "Thank you",
+      "title": "Revealing the Ship in *2016*",
+      "compact": true,
+      "sub": "has been made possible by",
+      "tiers": [
+        {
+          "size": 72,
+          "names": ["Heritage Lottery Fund"]
+        },
+        {
+          "size": 54,
+          "names": ["Garfield Weston Foundation"]
+        },
+        {
+          "size": 46,
+          "names": ["The Fidelity UK Foundation"]
+        },
+        {
+          "size": 42,
+          "names": ["The Gosling Foundation", "The Bernard Sunley Charitable Foundation"]
+        },
+        {
+          "size": 38,
+          "names": ["The Scorpion Charitable Trust", "The Stevenson Family’s Charitable Trust"]
+        }
+      ],
+      "officers": "Flag Officers of the Mary Rose",
+      "side": [
+        [
+          {
+            "rank": "Admiral",
+            "names": ["Mr Michael Aiken MBE", "Sir David Cooksey GBE", "Dr Chris Sansom"]
+          }
+        ],
+        [
+          {
+            "rank": "Commodore",
+            "names": ["Mr Andrew Joy", "The Hon Virginia Lovell DL"]
+          }
+        ]
+      ],
+      "closing": "And to all those who continue their personal support for the Mary Rose."
+    },
+    {
+      "type": "feature",
+      "image": "right",
+      "text": "top",
+      "seconds": 11,
+      "label": "Support us",
+      "tag": "Become a Patron",
+      "title": "Come back *as often as you like*",
+      "lede": "Bronze Patrons enjoy unlimited entry for themselves and a guest, and help preserve the Mary Rose for this and future generations.",
+      "facts": [
+        { "k": "Bronze Patron", "d": "£120 a year" }
+      ],
+      "note": "Scan the code below to find out more."
+    },
+    {
+      "type": "list",
+      "theme": "teal",
+      "seconds": 12,
+      "label": "Endowment Fund",
+      "page": "1 / 2",
+      "airy": true,
+      "eyebrow": "Thank you",
+      "title": "Securing the future of the *Mary Rose*",
+      "sub": "through the Mary Rose Permanent Endowment Fund\nhas been made possible by",
+      "tiers": [
+        {
+          "size": 108,
+          "names": ["Heritage Lottery Fund"]
+        },
+        {
+          "size": 84,
+          "names": ["Garfield Weston Foundation"]
+        },
+        {
+          "size": 60,
+          "names": ["Peter Harrison Heritage Foundation"]
+        },
+        {
+          "size": 50,
+          "names": ["The Lovington Foundation"]
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "image": "dive",
+      "text": "top",
+      "seconds": 10,
+      "label": "Museum shop",
+      "tag": "Shop offer",
+      "big": "10% off",
+      "title": "in the Mary Rose Shop",
+      "lede": "with every copy of ‘Immersed’ purchased.",
+      "loud": true,
+      "note": "‘Immersed’ is the Mary Rose souvenir guide."
+    },
+    {
+      "type": "list",
+      "theme": "teal",
+      "seconds": 13,
+      "label": "Endowment Fund",
+      "page": "2 / 2",
+      "eyebrow": "Thank you",
+      "title": "Securing the future of the *Mary Rose*",
+      "sub": "through the Mary Rose Permanent Endowment Fund\nhas been made possible by",
+      "officers": "Flag Officers of the Mary Rose",
+      "side": [
+        [
+          {
+            "rank": "Admiral",
+            "size": 40,
+            "names": ["The Hon Charles Harris"]
+          },
+          {
+            "rank": "Rear Admiral",
+            "size": 40,
+            "names": ["Mr Robert Legget"]
+          },
+          {
+            "rank": "Legacies",
+            "size": 40,
+            "names": ["The estate of the late", "Miss Mary Tyrrell"]
+          }
+        ],
+        [
+          {
+            "rank": "Commodore",
+            "size": 40,
+            "names": [
+              "Mr David Barnett",
+              "Mr John Butler",
+              "Mr John McCarthy",
+              "Mrs Penelope Tate",
+              "Mrs Patti White",
+              "Mr Chris Wilkinson OBE"
+            ]
+          },
+          {
+            "rank": "In memory of",
+            "size": 40,
+            "names": ["Mr Andrew Elkerton", "Mr Anthony Walker"]
+          }
+        ]
+      ],
+      "closing": "And to those who wish to remain anonymous."
+    }
+  ]
+}
