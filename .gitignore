@@ -1,0 +1,5 @@
+# Mac Finder files
+.DS_Store
+
+# Videos are too large for GitHub (100MB limit); upload them to the web server separately
+video/*.mp4

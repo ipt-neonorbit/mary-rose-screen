@@ -2,13 +2,13 @@ MARY ROSE RECEPTION SCREEN
 Created by Interpro Technology
 
 WHAT THIS IS
-A portrait (1080 x 1920) screen for the Mary Rose Museum reception. 22 pages
+A portrait (1080 x 1920) screen for the Mary Rose Museum reception. 29 pages
 rotate on a timer above a footer that stays put. Nobody needs to touch it.
 
 RUNNING IT
 Upload the whole folder to the web server and open index.html full screen on
-the player. Keep index.html, content.json and the images, fonts and js folders
-together.
+the player. Keep index.html, content.json and the images, fonts, js and video
+folders together.
 
 The page must be opened from the web server (an address starting http:// or
 https://). Opened straight from a computer's disk, browsers refuse to read
@@ -19,6 +19,10 @@ add #cw or #ccw to the end of the address (for example index.html#cw).
 
 CHECKING IT AT A DESK
 Right and left arrow keys (or a click) step through the pages. Space pauses.
+To start on a particular page, add ?slide= and its number to the address,
+for example index.html?slide=9 starts on the ninth page. Pages switched off
+with "show": false are not counted. It can be combined with the other
+options, e.g. index.html?slide=9&check or index.html?slide=9#cw.
 
 
 CHANGING THE CONTENT
@@ -75,7 +79,7 @@ WHAT EACH SECTION DOES
   openingHours
     seasons      each season's months (1 = January ... 12 = December), its
                  opening hours and last entry. Today's month picks the season.
-                 Winter is currently 10:00am – 4:15pm, last entry 3:15pm.
+                 Winter is currently 10:00am – 4:15pm, last entry 4:15pm.
     specialDays  one-off dates that override the season, such as closures,
                  Christmas hours or late openings. For example:
                    "specialDays": [
@@ -95,6 +99,10 @@ WHAT EACH SECTION DOES
                       Add more in the list, separated by commas.
     creditBy, creditName   the Interpro credit
 
+  donorNote  the lines printed along the bottom of the Flag Officers and
+             Patrons pages ("We continue to add names..."). Each line is a
+             new paragraph. A page shows it when it has "donorNote": true.
+
   logos    which image files are used for the three logos
 
   images   the picture names used by the pages, and the file each one points
@@ -106,6 +114,8 @@ WHAT EACH SECTION DOES
   screens  every page, in running order. To reorder pages, move a whole
            { ... } block. To remove a page, delete its block (and the comma
            after it). To add one, copy a similar block and change it.
+           To take a page off the screen but keep it in the file, add
+           "show": false to its block (set it back to true to bring it back).
 
   Fields on a picture page ("type": "feature"):
     image       a picture name from the images section
@@ -119,7 +129,8 @@ WHAT EACH SECTION DOES
     big         a large gold number or phrase ("1545", "10% off")
     eyebrow     a small heading above the title
     title       the main heading; titleSize sets its size in pixels
-    lede        the paragraph under the title (loud: true makes it larger)
+    lede        the paragraph under the title (loud: true makes it larger).
+                On supporter pages, \n starts a new paragraph
     facts       a list of { "k": "name", "d": "detail" } rows, e.g. tour prices
     note        the small line at the end
     dates       the three dates on the Welcome page
@@ -136,10 +147,21 @@ WHAT EACH SECTION DOES
     officers    the "Flag Officers of the Mary Rose" heading on mixed pages
     side        two columns of ranks side by side
     closing     the closing line in italics
+    donorNote   true prints the donorNote lines at the foot of the page
     compact, airy   tighter or looser spacing
 
-  If a list of names is too long for its column, the screen steps the type
-  size down until it fits. If a page gets too full, move some names to a new
+  Fields on a video page ("type": "video"):
+    video        the film's file, e.g. "video/roll-of-honour.mp4". Landscape,
+                 1080 pixels wide, no sound; it plays muted and loops.
+    randomStart  true (the default) starts the film from a different point
+                 each time the page comes round; false starts it at the
+                 beginning
+    show         false takes the page off the screen
+    theme, label, eyebrow, title, seconds, donorNote   as on supporter pages
+
+  If a name is too long for its column, the screen steps that list's type
+  size down a little, then lets the name run onto a second line (with any
+  letters after it, such as CBE DL, on the second line). If a page gets too full, move some names to a new
   page or lower that group's size.
 
 
@@ -151,8 +173,9 @@ STILL TO DO
   white version if there is one.
 - The serif is EB Garamond, standing in for Adobe Garamond Pro. The page uses
   Adobe Garamond Pro automatically if it is installed on the player.
-- Supporter names follow the installed wall panels, which differ from the Word
-  document in several spellings. Please have the Trust confirm them.
+- The Flag Officers and Patrons pages follow the Trust's "Display screen list
+  of donors" document (November 2026), word for word. The other supporter
+  pages still follow the installed wall panels.
 - Tour prices and the Patron price were taken from maryrose.org in October
   2026 and will need updating in content.json when they change.
 

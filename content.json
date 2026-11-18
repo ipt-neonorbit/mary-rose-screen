@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 5,
   "_help": "Edit the words between the quote marks, add 1 to the version number above, save, and upload this file over the old one. The screen checks the version number every 5 minutes and brings the changes in at the next page change. See README.txt for a guide to every section.",
   "settings": {
     "defaultSeconds": 10,
@@ -18,7 +18,7 @@
         "name": "Winter",
         "months": [11, 12, 1, 2, 3],
         "open": "10:00am – 4:15pm",
-        "lastEntry": "3:15pm"
+        "lastEntry": "4:15pm"
       }
     ],
     "specialDays": []
@@ -36,6 +36,11 @@
     "creditBy": "Created by",
     "creditName": "Interpro Technology"
   },
+  "donorNote": [
+    "We continue to add names of those who were instrumental in the rediscovery, excavation and raising of the Mary Rose.",
+    "The current list will be updated on a regular basis to reflect those who were involved.",
+    "If you know someone who was involved and who is not acknowledged, please let us know."
+  ],
   "logos": {
     "maryRose": "images/mary-rose-logo.png",
     "interpro": "images/interpro-logo.png",
@@ -215,38 +220,40 @@
     {
       "type": "list",
       "theme": "purple",
-      "seconds": 13,
+      "seconds": 14,
       "label": "Flag Officers",
       "page": "1 / 5",
       "eyebrow": "Our major donors",
       "title": "Flag Officers of the *Mary Rose*",
-      "lede": "The Mary Rose Trust recognises its major donors in four ranks, after the Flag Officers of the Royal Navy.",
+      "lede": "A huge thank you to everyone who has helped and continues to help make our museum possible.\nWe understand that some of our supporters prefer to remain anonymous, but we would like to take this opportunity to also extend our thanks to them.",
       "founder": {
-        "head": "Founder Member",
-        "name": "His Royal Highness, The Prince of Wales"
+        "head": "Founding Flag Officer",
+        "name": "HM King Charles III"
       },
       "ranks": [
         {
           "rank": "Admiral",
-          "size": 43,
-          "pad": 20,
+          "size": 38,
+          "pad": 5,
           "names": [
-            "Mr Michael Aiken",
-            "Sir David Cooksey GBE",
+            "Mr Michael Aiken RIP",
+            "Mr Julian Cazalet",
+            "Sir David Cooksey GBE RIP",
             "Mr Michael Donovan",
             "Mr Alexandre Gaydamak",
+            "Hon. Charles Harris",
             "Lord Iliffe DL",
-            "Mr Mark Loveday",
-            "Mr Alan Lovell DL",
+            "Rear Admiral John Lippiett CB CBE DL",
+            "Mr Mark Loveday RIP",
+            "Mr Alan Lovell",
             "Mr Rich Ricci",
-            "Mr Clive Richards OBE DL",
-            "Mr John Robinson",
-            "Dr Chris Sansom",
+            "Dr Chris Sansom RIP",
             "Lady Stevenson DL",
-            "Mr Daniel K Thorne"
+            "Mr Daniel Thorne"
           ]
         }
-      ]
+      ],
+      "donorNote": true
     },
     {
       "type": "feature",
@@ -263,7 +270,7 @@
     {
       "type": "list",
       "theme": "purple",
-      "seconds": 13,
+      "seconds": 14,
       "label": "Flag Officers",
       "page": "2 / 5",
       "eyebrow": "Our major donors",
@@ -272,37 +279,43 @@
         {
           "rank": "Vice Admiral",
           "size": 38,
-          "pad": 19,
+          "pad": 7,
           "names": [
-            "Mr Thomas Bachmann",
-            "Mr Len Blavatnik",
+            "Mr Lionel Allery",
+            "Sir Len Blavatnik",
+            "Mrs Molly Borthwick",
             "Mr Edmund Byers",
-            "Mr Michael Campbell MBE DL",
-            "The Hon Charles Harris",
+            "Mr Michael Campbell MBE DL RIP",
+            "Mr Robert Legget",
+            "Lord Lupton",
             "Mr Peter Mallinson",
-            "Mr Nigel McNair Scott",
-            "Mr Richard Morse",
-            "Mr Michael Slade"
+            "Mr Michael Slade OBE",
+            "Mrs Sophia Weston"
           ]
         },
         {
           "rank": "Rear Admiral",
           "size": 38,
-          "pad": 19,
+          "pad": 7,
           "names": [
             "Mr Richard Atterbury",
-            "Mr Julian Cazalet",
-            "Mr Simon De Zoete",
+            "Mrs Jennifer Brzozowska",
+            "Mr Simon de Zoete",
             "Mr Roger Eaton",
             "Lord Fink",
-            "Mr Jonathan Gestetner",
-            "Mr Derek Hathaway OBE",
+            "Lady Gavron",
+            "Jacqueline & Jonathan Gestetner",
+            "Mr Adam Humphryes",
             "Mr Geoff Hunt",
-            "Mr James Lupton CBE",
+            "Mr Robert Pooley LVO, MBE",
+            "Mr Nigel Purse",
+            "Mrs Stella Reeves",
+            "Ms Kirsten Suenson-Taylor",
             "Mr Peter Wilson"
           ]
         }
-      ]
+      ],
+      "donorNote": true
     },
     {
       "type": "feature",
@@ -318,7 +331,7 @@
     {
       "type": "list",
       "theme": "purple",
-      "seconds": 13,
+      "seconds": 14,
       "label": "Flag Officers",
       "page": "3 / 5",
       "eyebrow": "Our major donors",
@@ -327,37 +340,76 @@
         {
           "rank": "Commodore",
           "size": 38,
-          "pad": 14,
-          "range": "A – F",
+          "pad": 12,
+          "range": "A – G",
           "names": [
-            "Mr Lionel Allery",
+            "Mrs Heather Allery",
             "Mr Peter Andreae DL",
-            "Mr Michael Ashley",
             "Mrs Samantha Axtell",
-            "Mrs Jamie Balfour",
-            "Mr Michael Blinco",
+            "Mrs Carolyn Balfour",
+            "Mr David Barnett",
+            "Mr Mike Blinco",
             "Mr Thomas Bolt",
-            "Cdr Tim Boycott OBE RN",
-            "Lord Brabourne",
-            "Mr Christopher Brandon",
-            "Mr John Brookes OBE",
-            "Mr Jonathan Brown",
-            "Mr Keith Brown",
+            "Mr Chris Brandon",
             "Mr Andrew Brownsword",
-            "Mrs Jennifer Brzozowska",
-            "Mrs Dina Bunn",
-            "Mr John Butler",
-            "Mr Ian Cheshire",
-            "Lady Clarendon DL",
-            "Cdre Jonathan Cooke OBE RN",
-            "Sir David Davies DL",
+            "Mr Michael Bunn",
+            "Mr John E Butler",
+            "Sir Ian Cheshire",
+            "Dowager The Countess Clarendon",
+            "Commodore Jonathan Cooke OBE RN",
+            "Sir David Davis RIP",
             "Mr Michael Deeny",
             "Mr Peter Dobbs",
-            "Dame Amelia Fawcett DBE",
-            "Mr Colin Field"
+            "Dame Amelia Fawcett",
+            "Mr Colin Field JP DL",
+            "Mrs Caroline Godden",
+            "Mrs Emma Gogerty",
+            "Ms Jennifer Green"
           ]
         }
-      ]
+      ],
+      "donorNote": true
+    },
+    {
+      "type": "list",
+      "theme": "purple",
+      "seconds": 14,
+      "label": "Flag Officers",
+      "page": "4 / 5",
+      "eyebrow": "Our major donors",
+      "title": "Flag Officers of the *Mary Rose*",
+      "ranks": [
+        {
+          "rank": "Commodore",
+          "size": 38,
+          "pad": 12,
+          "range": "G – P",
+          "names": [
+            "Mr Matthew Grinnell",
+            "Mr Andrew Joy",
+            "Mr Terry Kerr",
+            "Mr David Kowitz",
+            "Mr Ian Laing",
+            "Mr Michael Langdon",
+            "Mrs Lucinda Little",
+            "The Hon Mrs Virginia Lovell DL",
+            "Lord Lymington",
+            "Mr John G McCarthy Jnr",
+            "Mr Neil McGrigor",
+            "Mr Nigel McNair Scott RIP",
+            "Mr Michael Meacock RIP",
+            "Mrs Dudley Moore",
+            "Mr Tim Oliver",
+            "Mr Terence O’Rourke",
+            "Mr Finian O’Sullivan",
+            "Mr David Palmer CBE",
+            "Earl of Portsmouth",
+            "Lady Portsmouth",
+            "Dr David Price"
+          ]
+        }
+      ],
+      "donorNote": true
     },
     {
       "type": "feature",
@@ -373,63 +425,7 @@
     {
       "type": "list",
       "theme": "purple",
-      "seconds": 13,
-      "label": "Flag Officers",
-      "page": "4 / 5",
-      "eyebrow": "Our major donors",
-      "title": "Flag Officers of the *Mary Rose*",
-      "ranks": [
-        {
-          "rank": "Commodore",
-          "size": 38,
-          "pad": 14,
-          "range": "G – P",
-          "names": [
-            "Ms Jennifer Green",
-            "Mr Matthew Grinnell",
-            "Mr Adam Humphryes",
-            "Mr Andrew Joy",
-            "Mr Terry Kerr",
-            "Mr David Kowitz",
-            "Mr Ian Laing CBE DL",
-            "Mrs Michael Langdon",
-            "Mr Robert Legget",
-            "R. Adm John Lippiett CB MBE",
-            "Miss Emma Lovell",
-            "Miss Lucinda Lovell",
-            "Viscount Lymington",
-            "Mr Neil McGrigor",
-            "Mr Michael Meacock",
-            "Dr Dudley Moore",
-            "Mr Colin Murray",
-            "Mr Finian O’Sullivan",
-            "Mr Tim Oliver",
-            "Mr David Palmer CBE",
-            "Mr Robert Pooley",
-            "The Countess of Portsmouth",
-            "The Earl of Portsmouth DL",
-            "Dr David Price CBE",
-            "Miss Caroline Purse"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "feature",
-      "image": "cowdray",
-      "text": "band",
-      "band": 800,
-      "seconds": 11,
-      "label": "Museum highlights",
-      "tag": "Interactive display",
-      "title": "Step into the *Cowdray Engraving*",
-      "titleSize": 100,
-      "lede": "Explore the events of 19 July 1545, and Portsmouth as the Tudors knew it, in an interactive virtual display."
-    },
-    {
-      "type": "list",
-      "theme": "purple",
-      "seconds": 13,
+      "seconds": 14,
       "label": "Flag Officers",
       "page": "5 / 5",
       "eyebrow": "Our major donors",
@@ -438,51 +434,35 @@
         {
           "rank": "Commodore",
           "size": 38,
-          "pad": 14,
+          "pad": 12,
           "range": "P – W",
           "names": [
-            "Mr Nigel Purse",
-            "Mrs Stella Reeves",
-            "Mr Russell S Reynolds, Jr",
-            "Lady Rivett-Carnac",
+            "Mrs Irene Purse",
+            "Mr Russell S Reynolds Jnr",
             "Mr Keith Roberts",
-            "Mrs Judy Robinson",
             "Mr Alex Roe",
-            "Mr James Roe",
             "Mr Ian Ronald",
-            "Mr Christopher Shaw",
+            "Mr Tim Rusby",
+            "Mr Christopher Shaw RIP",
             "Mr Andrew Speirs",
-            "Mr Nicholas Stanley",
             "Mr Alan Stannah",
+            "Sir Hugh Stevenson",
             "Dr Derek Stubbs",
             "Mr Tom Sweet-Escott",
+            "Mrs Penelope Tate",
             "Mr Hugh Tidbury",
-            "Lady Tidbury",
-            "The Hon Robert Tuttle",
+            "Lady Tidbury RIP",
             "Mrs Sally Tyrrell",
             "Mrs Cynthia J Warner",
             "Mr Charles Watson",
-            "Mrs Anne Wright",
-            "Mr Crispin Wright"
+            "Mrs Patti White",
+            "Mr Chris Wilkinson OBE RIP",
+            "Mr Crispin Wright",
+            "Mrs Anne Wright"
           ]
         }
-      ]
-    },
-    {
-      "type": "feature",
-      "image": "tours",
-      "wash": true,
-      "text": "top",
-      "seconds": 12,
-      "label": "What’s on",
-      "tag": "Guided tours",
-      "title": "Explore with an *expert guide*",
-      "facts": [
-        { "k": "Highlights Tour", "d": "1 hour · £15 per person" },
-        { "k": "Premium Tour", "d": "2 hours · £25 per person" },
-        { "k": "Family Tour", "d": "1 hour · £30" }
       ],
-      "note": "The Premium Tour includes a look at artefacts in our reserve collection. Book online at maryrose.org."
+      "donorNote": true
     },
     {
       "type": "list",
@@ -534,6 +514,218 @@
     },
     {
       "type": "feature",
+      "image": "cowdray",
+      "text": "band",
+      "band": 800,
+      "seconds": 11,
+      "label": "Museum highlights",
+      "tag": "Interactive display",
+      "title": "Step into the *Cowdray Engraving*",
+      "titleSize": 100,
+      "lede": "Explore the events of 19 July 1545, and Portsmouth as the Tudors knew it, in an interactive virtual display."
+    },
+    {
+      "type": "list",
+      "theme": "purple",
+      "seconds": 14,
+      "label": "Patrons",
+      "page": "1 / 6",
+      "eyebrow": "Thank you",
+      "title": "Patrons of the *Mary Rose*",
+      "ranks": [
+        {
+          "rank": "Honorary Patrons",
+          "size": 38,
+          "pad": 10,
+          "names": [
+            "Mr Christopher Andrae",
+            "Mr Adrian Bowles",
+            "Mr Peter Ellement",
+            "Dr & Mrs David Hartnett",
+            "Mr Adrian Platt"
+          ]
+        },
+        {
+          "rank": "Life Patrons",
+          "size": 38,
+          "pad": 10,
+          "range": "A – H",
+          "names": [
+            "Mr John Adams",
+            "Mrs Heather Allery",
+            "Mr David Bailey",
+            "Mr James Bangert",
+            "Mr David Childs CBE, D.Litt",
+            "Rear Admiral Roy Clare CBE DL Hon D.Litt",
+            "Mr Matt Coumbe",
+            "Mr Damon de Lazlo",
+            "Mr Christopher Dobbs",
+            "Mr Geoffrey Dobbs",
+            "Mr Michael Dobbs",
+            "Mr Rod Edwards",
+            "Mr Alan Egerton",
+            "Mr David Hagan",
+            "Mr Tim Hopper"
+          ]
+        }
+      ],
+      "donorNote": true
+    },
+    {
+      "type": "list",
+      "theme": "purple",
+      "seconds": 14,
+      "label": "Patrons",
+      "page": "2 / 6",
+      "eyebrow": "Thank you",
+      "title": "Patrons of the *Mary Rose*",
+      "ranks": [
+        {
+          "rank": "Life Patrons",
+          "size": 38,
+          "pad": 10,
+          "range": "L – W",
+          "names": [
+            "Mr Robert Lapraik",
+            "Mr Geoffrey Leece",
+            "Mr Charles Martin",
+            "Mr Alex McKee",
+            "Mrs Elizabeth Molineux",
+            "Lady Morton",
+            "Mr Anthony Palmer",
+            "Dame Marion Roe",
+            "Dr Lesley Runnalls",
+            "Sir James Scott Bt. DL",
+            "Mr Richard Tassell",
+            "Mr Ray Wheeler",
+            "Mr Derek Williams",
+            "Mrs Anna Woolley"
+          ]
+        },
+        {
+          "rank": "Gold Patrons",
+          "size": 38,
+          "pad": 10,
+          "names": [
+            "Mrs Jane Bawn",
+            "Dr Robert Bewley",
+            "Mrs Helen Bonser-Wilton",
+            "Vice-Admiral Peter Hudson CB CBE"
+          ]
+        }
+      ],
+      "donorNote": true
+    },
+    {
+      "type": "feature",
+      "image": "tours",
+      "wash": true,
+      "text": "top",
+      "seconds": 12,
+      "label": "What’s on",
+      "tag": "Guided tours",
+      "title": "Explore with an *expert guide*",
+      "facts": [
+        { "k": "Highlights Tour", "d": "1 hour · £15 per person" },
+        { "k": "Premium Tour", "d": "2 hours · £25 per person" },
+        { "k": "Family Tour", "d": "1 hour · £30" }
+      ],
+      "note": "The Premium Tour includes a look at artefacts in our reserve collection. Book online at maryrose.org."
+    },
+    {
+      "type": "list",
+      "theme": "purple",
+      "seconds": 14,
+      "label": "Patrons",
+      "page": "3 / 6",
+      "eyebrow": "Thank you",
+      "title": "Patrons of the *Mary Rose*",
+      "ranks": [
+        {
+          "rank": "Silver Patrons",
+          "size": 38,
+          "pad": 10,
+          "names": [
+            "Mr Luke Andrews",
+            "Mr Bernard Barnwell",
+            "Sir Don-John Buckland KC*HS",
+            "Mr Ronald Button",
+            "Dr Kirsten Claiden-Yardley",
+            "Julie Hastings (Quiverstock Ltd)",
+            "Mr Chris ‘Kit’ Power RIP",
+            "Ms Kathy Powis",
+            "Mr Kevin Taylor",
+            "Mr Howard Thompson",
+            "Dr Nicolas Dudley Vaughan"
+          ]
+        },
+        {
+          "rank": "Bronze Patrons",
+          "size": 38,
+          "pad": 10,
+          "range": "A – C",
+          "names": [
+            "Ms Betty Ackrill",
+            "Ms Berit Antonsen",
+            "Mr Simon Ashall",
+            "Mr Peter Asplin",
+            "Dr Steven Barr",
+            "Mr Brian Bartholomew",
+            "Mr James Barton-Booth",
+            "Mr Chris Brandon",
+            "Ms Judie Burman",
+            "Mr Adam Burnham",
+            "Mr Michael Bury",
+            "Mr Andrew Churnin"
+          ]
+        }
+      ],
+      "donorNote": true
+    },
+    {
+      "type": "list",
+      "theme": "purple",
+      "seconds": 14,
+      "label": "Patrons",
+      "page": "4 / 6",
+      "eyebrow": "Thank you",
+      "title": "Patrons of the *Mary Rose*",
+      "ranks": [
+        {
+          "rank": "Bronze Patrons",
+          "size": 38,
+          "pad": 10,
+          "range": "C – H",
+          "names": [
+            "Mr Geoffrey Clements",
+            "Dr Trevor Coleman",
+            "Mr Paul Coles",
+            "Dr Ken Collins",
+            "Professor Mark Dowsett",
+            "Mrs Caroline Dudley",
+            "Mr Martin Farhall",
+            "Mrs Lynn Fawcett",
+            "Mr Charles Field",
+            "Mrs Debby Fox",
+            "Mr Gary Greaves",
+            "Vice-Admiral Michael Gretton CB",
+            "Mr Pete Hanger",
+            "Mrs Kerry Harper",
+            "David Harrison",
+            "Mr Jon Haylock",
+            "Mr Peter Hayward",
+            "Mrs Trish Hayward",
+            "Mrs Janet Hird",
+            "Lydia Hodkinson",
+            "Miss Verina Horsnell",
+            "Mr Kevin Howell"
+          ]
+        }
+      ],
+      "donorNote": true
+    },
+    {
+      "type": "feature",
       "image": "right",
       "text": "top",
       "seconds": 11,
@@ -545,6 +737,114 @@
         { "k": "Bronze Patron", "d": "£120 a year" }
       ],
       "note": "Scan the code below to find out more."
+    },
+    {
+      "type": "list",
+      "theme": "purple",
+      "seconds": 14,
+      "label": "Patrons",
+      "page": "5 / 6",
+      "eyebrow": "Thank you",
+      "title": "Patrons of the *Mary Rose*",
+      "ranks": [
+        {
+          "rank": "Bronze Patrons",
+          "size": 38,
+          "pad": 10,
+          "range": "H – P",
+          "names": [
+            "Mr William Hutchin",
+            "Mr Michael Hyde",
+            "Mr Ian Jeffrey",
+            "Mr Nigel C Kelland",
+            "Mr Alan Kingwell",
+            "Miss Mary Kinoulty",
+            "Mr Mark Leary",
+            "Ms Jenny Mallinson",
+            "Mr Gordon Massie",
+            "Mrs Margaret Massie",
+            "Ms Kirsten McAteer",
+            "Mr Andy McNally",
+            "Dr David Melzack",
+            "Dr Christopher (Kit) Mitchell",
+            "Mrs Marie Mollins",
+            "Professor Hugh Montgomery",
+            "Mr Trevor Morgan",
+            "Mrs Angela Morris",
+            "Commander Paul Murnane MBE RN",
+            "Lady Nixon",
+            "Mr A J Noon",
+            "Mr Bruce Parker MBE"
+          ]
+        }
+      ],
+      "donorNote": true
+    },
+    {
+      "type": "list",
+      "theme": "purple",
+      "seconds": 14,
+      "label": "Patrons",
+      "page": "6 / 6",
+      "eyebrow": "Thank you",
+      "title": "Patrons of the *Mary Rose*",
+      "ranks": [
+        {
+          "rank": "Bronze Patrons",
+          "size": 38,
+          "pad": 10,
+          "range": "P – W",
+          "names": [
+            "Mr Steven Perring",
+            "Mr Adrian Platt",
+            "Mr John Pridmore",
+            "Mrs Francesca Radcliffe",
+            "Mr Brian Robinson",
+            "Mr Steve Roue",
+            "Mr Simon Skuse",
+            "Mr Christopher Stevens LVO",
+            "Mr Edwin Strankalis",
+            "Miss Ann Taylor",
+            "Mr Edward Tew",
+            "Mr Alan Titchmarsh MBE DL",
+            "Miss Linda Wainwright",
+            "Ms Sandra Ward",
+            "Mr & Mrs P West",
+            "Mr Stephen West",
+            "Mr Michael White",
+            "Nicolette Whitehouse",
+            "Mr David Widdowson",
+            "Mrs Heather Williams",
+            "Mrs Ros Withers"
+          ]
+        }
+      ],
+      "donorNote": true
+    },
+    {
+      "type": "video",
+      "show": true,
+      "theme": "purple",
+      "seconds": 20,
+      "label": "Roll of Honour",
+      "eyebrow": "Thank you",
+      "title": "Patrons of the *Mary Rose*",
+      "video": "video/roll-of-honour.mp4",
+      "randomStart": true,
+      "donorNote": true
+    },
+    {
+      "type": "feature",
+      "image": "dive",
+      "text": "top",
+      "seconds": 10,
+      "label": "Museum shop",
+      "tag": "Shop offer",
+      "big": "10% off",
+      "title": "in the Mary Rose Shop",
+      "lede": "with every copy of ‘Immersed’ purchased.",
+      "loud": true,
+      "note": "‘Immersed’ is the Mary Rose souvenir guide."
     },
     {
       "type": "list",
@@ -574,19 +874,6 @@
           "names": ["The Lovington Foundation"]
         }
       ]
-    },
-    {
-      "type": "feature",
-      "image": "dive",
-      "text": "top",
-      "seconds": 10,
-      "label": "Museum shop",
-      "tag": "Shop offer",
-      "big": "10% off",
-      "title": "in the Mary Rose Shop",
-      "lede": "with every copy of ‘Immersed’ purchased.",
-      "loud": true,
-      "note": "‘Immersed’ is the Mary Rose souvenir guide."
     },
     {
       "type": "list",

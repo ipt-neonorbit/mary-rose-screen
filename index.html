@@ -257,6 +257,9 @@ body {
 .names { margin-top: 12px; font-family: var(--display); font-size: 38px; line-height: 1.15; }
 .names .n { display: block; white-space: nowrap; padding: 9px 0; break-inside: avoid; }
 .names.two { column-count: 2; column-gap: 40px; }
+/* a name too long for its column: the letters after it drop to a second line, anything else wraps with a hanging indent */
+.names .n.wrap { white-space: normal; padding-left: .6em; text-indent: -.6em; }
+.names .n.wrap .pn { display: block; margin: .15em 0 0; text-indent: 0; }
 .pn {
   font: 600 .56em/1 var(--text);
   letter-spacing: .1em;
@@ -270,6 +273,18 @@ body {
 .side .rank { margin-top: 30px; }
 .side .names .n { padding: 7px 0; }
 .closing { font: italic 400 40px/1.25 var(--display); margin: 38px 0 0; max-width: 840px; }
+.body .lede + .lede { margin-top: 14px; }
+/* The standing note at the foot of the donor list pages */
+.donor-note {
+  position: absolute;
+  left: 72px; right: 72px; bottom: 40px;
+  padding-top: 20px;
+  border-top: 2px solid var(--hair);
+  font: 400 22px/1.4 var(--text);
+  opacity: .9;
+}
+.donor-note p { margin: 0; }
+.donor-note p + p { margin-top: 4px; }
 
 .lottery {
   position: absolute;
@@ -277,6 +292,12 @@ body {
   width: 470px; height: auto;
   mix-blend-mode: screen;
 }
+
+/* ---------- Video screens: the supporter heading above a full-width film ---------- */
+.screen.film { display: flex; flex-direction: column; }
+.film-area { flex: 1; display: flex; align-items: center; }
+.film.has-note .film-area { padding-bottom: 196px; }
+.film video { display: block; width: 1080px; height: 608px; background: var(--ink); object-fit: cover; }
 
 /* One screen carries more lines than the rest and is set a little tighter */
 .compact .tier { margin-top: 32px; }
@@ -373,14 +394,17 @@ var CACHE_KEY = 'maryRoseScreenContent';
    Written in plain ES5 so it runs on older signage browsers.
    ========================================================================== */
 function startScreen(C) {
-  var FOOTER, SCREENS, IMAGES, LOGOS, SETTINGS, HOURS;
+  var FOOTER, SCREENS, IMAGES, LOGOS, SETTINGS, HOURS, DONOR_NOTE;
   function use(c) {
-    FOOTER = c.footer; SCREENS = c.screens; IMAGES = c.images || {}; LOGOS = c.logos || {};
-    SETTINGS = c.settings || {}; HOURS = c.openingHours || {};
+    /* a page with "show": false is left out of the rotation */
+    SCREENS = [];
+    for (var i = 0; i < c.screens.length; i++) { if (c.screens[i].show !== false) { SCREENS.push(c.screens[i]); } }
+    FOOTER = c.footer; IMAGES = c.images || {}; LOGOS = c.logos || {};
+    SETTINGS = c.settings || {}; HOURS = c.openingHours || {}; DONOR_NOTE = c.donorNote || [];
   }
   use(C);
   var STAGE_W = 1080, STAGE_H = 1920, PUSH_MS = 1200;
-  var POSTNOMINALS = /((?:\s(?:DL|OBE|MBE|CBE|GBE|DBE|KBE|CB|RN))+)$/;
+  var POSTNOMINALS = /((?:,?\s(?:DL|OBE|MBE|CBE|GBE|DBE|KBE|CB|RN|LVO|JP|RIP|KC\*HS|Bt\.?|(?:Hon\s)?D\.Litt))+)$/;
   var TONE_RGB = { ink: '2,0,24', navy: '22,38,100', purple: '64,38,84', maroon: '87,38,58', teal: '0,114,152' };
 
   var stage = document.getElementById('stage');
@@ -396,7 +420,7 @@ function startScreen(C) {
   function person(s) {
     var m = POSTNOMINALS.exec(s);
     if (!m) { return esc(s); }
-    return esc(s.slice(0, m.index)) + '<span class="pn">' + esc(m[1].replace(/^\s+/, '')) + '</span>';
+    return esc(s.slice(0, m.index)) + '<span class="pn">' + esc(m[1].replace(/^,?\s+/, '')) + '</span>';
   }
 
   function mast(sc) {
@@ -414,14 +438,17 @@ function startScreen(C) {
     var h = '<div class="rank"><div class="rank-head rise"><div>' + esc(r.rank) + '</div>' +
       (r.range ? '<span>' + esc(r.range) + '</span>' : '') + '</div><div class="names ' + cls + '"' +
       (r.size ? ' style="font-size:' + r.size + 'px"' : '') + '>';
-    var pad = r.pad ? ' style="padding:' + r.pad + 'px 0"' : '';
+    var pad = r.pad ? ' style="padding-top:' + r.pad + 'px;padding-bottom:' + r.pad + 'px"' : '';
     for (var i = 0; i < r.names.length; i++) { h += '<span class="n rise"' + pad + '>' + person(r.names[i]) + '</span>'; }
     return h + '</div></div>';
   }
 
   function buildList(sc) {
     var h = '', i, j;
-    if (sc.lede) { h += '<p class="lede rise">' + esc(sc.lede) + '</p>'; }
+    if (sc.lede) {
+      var paras = String(sc.lede).split('\n');
+      for (i = 0; i < paras.length; i++) { h += '<p class="lede rise">' + esc(paras[i]) + '</p>'; }
+    }
     if (sc.founder) {
       h += '<div class="founder"><p class="eyebrow rise">' + esc(sc.founder.head) + '</p>' +
         '<div class="n rise">' + esc(sc.founder.name) + '</div></div>';
@@ -447,15 +474,58 @@ function startScreen(C) {
       h += '</div>';
     }
     if (sc.closing) { h += '<p class="closing rise">' + esc(sc.closing) + '</p>'; }
-    /* the title sits on a colour-washed picture that fades into the section colour */
-    var rgb = TONE_RGB[sc.theme], band = IMAGES['band-' + sc.theme];
-    var wash = 'linear-gradient(to bottom, rgba(' + rgb + ',.5) 0%, rgba(' + rgb + ',.62) 55%, rgb(' + rgb + ') 100%)';
-    h = '<div class="head" style="background-image:' + wash + (band ? ',url(' + band + ')' : '') + '">' +
-      mast(sc) + titles(sc) + '</div><div class="body">' + h + '</div>';
+    h = listHead(sc) + '<div class="body">' + h + '</div>';
+    h += donorNote(sc);
     if (sc.lottery) {
       h += '<img class="lottery rise" alt="Supported by The National Lottery through the Heritage Lottery Fund" src="' + LOGOS.lottery + '">';
     }
     return h;
+  }
+  function donorNote(sc) {
+    if (!sc.donorNote || !DONOR_NOTE.length) { return ''; }
+    var h = '<div class="donor-note rise">';
+    for (var i = 0; i < DONOR_NOTE.length; i++) { h += '<p>' + esc(DONOR_NOTE[i]) + '</p>'; }
+    return h + '</div>';
+  }
+  /* the title sits on a colour-washed picture that fades into the section colour */
+  function listHead(sc) {
+    var rgb = TONE_RGB[sc.theme] || TONE_RGB.purple, band = IMAGES['band-' + sc.theme];
+    var wash = 'linear-gradient(to bottom, rgba(' + rgb + ',.5) 0%, rgba(' + rgb + ',.62) 55%, rgb(' + rgb + ') 100%)';
+    return '<div class="head" style="background-image:' + wash + (band ? ',url(' + band + ')' : '') + '">' + mast(sc) + titles(sc) + '</div>';
+  }
+
+  /* A film page: the supporter heading, then the video across the full width. It is muted, loops,
+     and (unless "randomStart" is false) starts from a different point each time the page comes round. */
+  function buildVideo(sc) {
+    return listHead(sc) + '<div class="film-area"><video muted playsinline loop preload="auto" disablepictureinpicture' +
+      ' data-random="' + (sc.randomStart === false ? '0' : '1') + '" data-secs="' + (sc.seconds || SETTINGS.defaultSeconds || 10) + '"' +
+      ' src="' + esc(sc.video) + '"></video></div>' + donorNote(sc);
+  }
+  /* Get a page's video ready (seek it to its starting point) while the page before it is on screen */
+  function cue(el) {
+    var v = el && el.querySelector('video');
+    if (!v || v.getAttribute('data-cued')) { return; }
+    v.setAttribute('data-cued', '1');
+    function seek() {
+      v.removeEventListener('loadedmetadata', seek);
+      var d = v.duration, secs = parseFloat(v.getAttribute('data-secs')) || 0;
+      var at = v.getAttribute('data-random') === '1' && d && isFinite(d) ? Math.random() * Math.max(0, d - secs - 2) : 0;
+      try { v.currentTime = at; } catch (e) {}
+    }
+    if (v.readyState >= 1) { seek(); } else { v.addEventListener('loadedmetadata', seek); }
+  }
+  function playVideo(el) {
+    var v = el && el.querySelector('video');
+    if (!v) { return; }
+    cue(el);
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  function stopVideo(el) {
+    var v = el && el.querySelector('video');
+    if (!v) { return; }
+    v.pause();
+    v.removeAttribute('data-cued');
   }
 
   function buildFeature(sc) {
@@ -538,6 +608,9 @@ function startScreen(C) {
       if (sc.type === 'feature') {
         el.className = 'screen feature t-ink ' + (sc.text === 'band' ? 'band' : 'at-' + (sc.text || 'top')) + (sc.wash ? ' wash' : '');
         el.innerHTML = buildFeature(sc);
+      } else if (sc.type === 'video') {
+        el.className = 'screen film t-' + (sc.theme || 'purple') + (sc.donorNote ? ' has-note' : '');
+        el.innerHTML = buildVideo(sc);
       } else {
         el.className = 'screen list t-' + sc.theme + (sc.compact ? ' compact' : '') + (sc.airy ? ' airy' : '');
         el.innerHTML = buildList(sc);
@@ -551,18 +624,23 @@ function startScreen(C) {
     return list;
   }
 
-  /* If a name is too long for its column (for example when a fallback font is in use), step that list's type down until it fits. */
+  /* If a name is too long for its column (for example when a fallback font is in use), step that list's type down a
+     little. A name that still does not fit wraps onto a second line, so one long name never shrinks the whole list. */
   function fitNames() {
     var lists = deck.querySelectorAll('.names');
     for (var i = 0; i < lists.length; i++) {
       var list = lists[i], size = parseFloat(window.getComputedStyle(list).fontSize), guard = 0;
-      while (guard++ < 14 && size > 26 && overflows(list)) { size -= 1; list.style.fontSize = size + 'px'; }
+      if (!list.getAttribute('data-size')) { list.setAttribute('data-size', size); }
+      var floor = Math.max(26, Math.round(parseFloat(list.getAttribute('data-size')) * 0.88));
+      while (guard++ < 14 && size > floor && overflowing(list).length) { size -= 1; list.style.fontSize = size + 'px'; }
+      var long = overflowing(list);
+      for (var j = 0; j < long.length; j++) { long[j].className += ' wrap'; }
     }
   }
-  function overflows(list) {
-    var items = list.querySelectorAll('.n');
-    for (var i = 0; i < items.length; i++) { if (items[i].scrollWidth > items[i].clientWidth + 1) { return true; } }
-    return false;
+  function overflowing(list) {
+    var items = list.querySelectorAll('.n'), out = [];
+    for (var i = 0; i < items.length; i++) { if (items[i].scrollWidth > items[i].clientWidth + 1) { out.push(items[i]); } }
+    return out;
   }
 
   /* Scale the 1080 x 1920 stage to the display. Add #cw or #ccw to the address if the
@@ -610,7 +688,10 @@ function startScreen(C) {
     from.className = from.className.replace(/\s(is-on|is-in|rev)\b/g, '') + ' is-out' + (back ? ' rev' : '');
     to.className = to.className.replace(/\s(is-out|rev)\b/g, '') + ' is-on is-in' + (back ? ' rev' : '');
     current = next;
+    playVideo(to);
+    cue(els[(next + 1) % els.length]);
     setTimeout(function () {
+      if (from !== to) { stopVideo(from); }
       from.className = from.className.replace(/\s(is-out|rev)\b/g, '');
       if (old) { for (var i = 0; i < old.length; i++) { deck.removeChild(old[i]); } }
       busy = false;
@@ -623,7 +704,12 @@ function startScreen(C) {
   tick();
   setInterval(tick, 10000);
   layout();
-  els[0].className += ' is-on';
+  /* ?slide=9 in the address starts on the ninth page (counting only pages that are shown), for checking a page at a desk */
+  var startAt = /[?&]slide=(\d+)/.exec(location.search);
+  if (startAt) { current = Math.min(Math.max(parseInt(startAt[1], 10), 1), els.length) - 1; }
+  els[current].className += ' is-on';
+  playVideo(els[current]);
+  cue(els[(current + 1) % els.length]);
   fitNames();
   if (document.fonts && document.fonts.ready && document.fonts.ready.then) { document.fonts.ready.then(fitNames); }
   schedule();
@@ -684,6 +770,9 @@ function fetchText(url, done) {
 function parseContent(text) {
   var c = JSON.parse(text);
   if (!c || !c.screens || !c.screens.length) { throw new Error('there are no screens listed'); }
+  var shown = 0;
+  for (var i = 0; i < c.screens.length; i++) { if (c.screens[i].show !== false) { shown++; } }
+  if (!shown) { throw new Error('every screen is set to "show": false'); }
   if (!c.footer) { throw new Error('the footer section is missing'); }
   return c;
 }
